@@ -1,5 +1,3 @@
-package MP3;
-
 import java.util.Scanner;
 
 /**
@@ -15,9 +13,10 @@ public class Rule30 {
             System.out.println("Enter Binary String\n(less than or equal to 30 in length):\n");
             String binaryInput = s.nextLine();
 
-            if(!binaryInput.matches("[01]+"))
-                throw new Exception("Invalid input.");
-            
+            if(!binaryInput.matches("[01]+") || binaryInput.length() > 30 ){
+                throw new Exception("Invalid input. Length should be less than 30 \n and must contain only 1s and 0s");
+            }
+                
             setValues(binaryInput);
             rule30();
             display();
